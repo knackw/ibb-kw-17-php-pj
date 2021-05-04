@@ -1,0 +1,24 @@
+version: '3.9'
+services:
+  webserver:
+    image: thinhbuzz/php-74-apache-xdebug-29-rewrite
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html
+    restart: "no"
+    environment:
+      XDEBUG_CONFIG: remote_host=host.docker.internal
+  database:
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password --sql-mode=""
+    restart: "no"
+    ports:
+      - 3306:3306
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+      MYSQL_DATABASE: database_name
