@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/include" />
+    </include_path>
+  </component>
   <component name="PhpInterpreters">
     <interpreters>
-      <interpreter id="2291563d-d65e-4628-a0ff-fad9c958b39c" name="thinhbuzz/php-74-apache-xdebug-29-rewrite:latest" home="docker://DATA" debugger_id="php.debugger.XDebug">
+      <interpreter id="7ec25be8-53de-49fd-a46b-87b9ef25022a" name="ibb-kw-17-php-pj-php8_apache:latest" home="docker://DATA" debugger_id="php.debugger.XDebug">
         <remote_data INTERPRETER_PATH="php" HELPERS_PATH="/opt/.phpstorm_helpers" INITIALIZED="false" VALID="true" RUN_AS_ROOT_VIA_SUDO="false" DOCKER_ACCOUNT_NAME="Docker" DOCKER_IMAGE_NAME="thinhbuzz/php-74-apache-xdebug-29-rewrite:latest" DOCKER_REMOTE_PROJECT_PATH="/opt/project" />
       </interpreter>
     </interpreters>
   </component>
   <component name="PhpInterpretersPhpInfoCache">
     <phpInfoCache>
-      <interpreter name="thinhbuzz/php-74-apache-xdebug-29-rewrite:latest">
+      <interpreter name="ibb-kw-17-php-pj-php8_apache:latest">
         <phpinfo binary_type="PHP" php_cli="/usr/local/bin/php" path_separator=":" version="7.4.15">
           <additional_php_ini>/usr/local/etc/php/conf.d/docker-php-ext-gd.ini, /usr/local/etc/php/conf.d/docker-php-ext-mysqli.ini, /usr/local/etc/php/conf.d/docker-php-ext-pdo_mysql.ini, /usr/local/etc/php/conf.d/docker-php-ext-sodium.ini, /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini, /usr/local/etc/php/conf.d/docker-php-ext-zip.ini, /usr/local/etc/php/conf.d/php-upload.ini, /usr/local/etc/php/conf.d/php-xdebug.ini</additional_php_ini>
           <configuration_file>/usr/local/etc/php/php.ini</configuration_file>
@@ -67,12 +72,13 @@
   </component>
   <component name="PhpProjectServersManager">
     <servers>
-      <server host="localhost" id="202ffe34-c1b5-4c58-a0b1-7cc359e1298b" name="localhost" use_path_mappings="true">
+      <server host="localhost" id="202ffe34-c1b5-4c58-a0b1-7cc359e1298b" name="Host" use_path_mappings="true">
         <path_mappings>
-          <mapping local-root="$PROJECT_DIR$" remote-root="/var/www/html" />
+          <mapping local-root="$PROJECT_DIR$/app" remote-root="/var/www/html" />
         </path_mappings>
       </server>
     </servers>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
+  <component name="PhpRuntimeConfiguration" document_root_path="app" />
 </project>
