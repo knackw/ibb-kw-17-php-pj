@@ -5,20 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0084c185-20da-4eba-91cf-0dc1751bf0ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php-docker-settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php-docker-settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/config/autoload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/config/constants.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/config/tables_creator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/Controller.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/Database.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/HomeController.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/Model.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/Request.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/Router.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/core/Session.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/info.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/mvc/controllers/CartController.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/mvc/controllers/HomeController.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/mvc/models/Cart.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/mvc/models/Product.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/mvc/models/User.class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/mvc/views/cart.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/mvc/views/checkout.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/mvc/views/home.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/mvc/views/summary.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/mvc/views/templates/layout.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/js/cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/js/home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Debug_Browser.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Docker_PHP.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php-upload.ini" beforeDir="false" afterPath="$PROJECT_DIR$/php-upload.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,13 +61,10 @@
       </server>
     </servers>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="ibb-kw-17-php-pj-php8_apache:latest">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
       <path value="$PROJECT_DIR$/include" />
     </include_path>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1s5TCRmTHIASNxHfzF27buCWvNF" />
   <component name="ProjectViewState">
@@ -57,38 +72,60 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Constants" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm" value="Docker" />
     <property name="credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm" value="Docker" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/config" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ibb-kw-17-php-pj\app\app\views\templates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ibb-kw-17-php-pj\app\config" />
+      <recent name="C:\xampp\htdocs\ibb-kw-17-php-pj\app\core" />
+      <recent name="C:\xampp\htdocs\ibb-kw-17-php-pj\app\app\views" />
       <recent name="C:\www\ibb\ibb-kw-17-php-pj" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.index.php">
+    <configuration name="constants.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/config/constants.php">
+      <method v="2" />
+    </configuration>
     <configuration name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/index.php">
+      <method v="2" />
+    </configuration>
+    <configuration name="info.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/info.php">
+      <method v="2" />
+    </configuration>
+    <configuration name="tables_creator.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/config/tables_creator.php">
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Docker.Docker" />
       <item itemvalue="PHP Remote Debug.Debug Browser" />
       <item itemvalue="PHP Script.index.php" />
+      <item itemvalue="PHP Script.tables_creator.php" />
+      <item itemvalue="PHP Script.constants.php" />
+      <item itemvalue="PHP Script.info.php" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="PHP Script.index.php" />
+        <item itemvalue="PHP Script.tables_creator.php" />
+        <item itemvalue="PHP Script.info.php" />
+        <item itemvalue="PHP Script.constants.php" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="1" Folder0="C:\www\lang" CustomDictionaries="1" CustomDictionary0="C:\www\lang\de_neu.dic" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="0084c185-20da-4eba-91cf-0dc1751bf0ae" name="Default Changelist" comment="" />
@@ -104,7 +141,10 @@
       <workItem from="1620200253221" duration="120000" />
       <workItem from="1620200480754" duration="2375000" />
       <workItem from="1620231319290" duration="5926000" />
-      <workItem from="1620238925544" duration="1102000" />
+      <workItem from="1620238925544" duration="5006000" />
+      <workItem from="1620244157840" duration="1646000" />
+      <workItem from="1620246049358" duration="8873000" />
+      <workItem from="1620279080874" duration="30075000" />
     </task>
     <task id="LOCAL-00001" summary="some changes">
       <created>1620166821320</created>
@@ -120,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620166905278</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="some changes">
+      <created>1620240060207</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1620240060207</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

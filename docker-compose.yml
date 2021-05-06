@@ -1,14 +1,20 @@
 version: '3.9'
+
+networks:
+  web-db-net:
+
 services:
   webserver:
     image: thinhbuzz/php-74-apache-xdebug-29-rewrite
     ports:
       - "80:80"
     volumes:
-      - ./app:/var/www/html
+      - ./mvc:/var/www/html
     restart: "no"
     environment:
       XDEBUG_CONFIG: remote_host=host.docker.internal
+    networks:
+      - web-db-net
   database:
     image: mysql:5.7
     command: --default-authentication-plugin=mysql_native_password --sql-mode=""
@@ -21,4 +27,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: mysql
       MYSQL_PASSWORD: mysql
-      MYSQL_DATABASE: database_name
+      MYSQL_DATABASE: ibb-kw-17-php-pj
+    networks:
+      - web-db-net
+
