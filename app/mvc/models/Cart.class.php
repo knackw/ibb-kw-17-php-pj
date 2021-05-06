@@ -1,73 +1,136 @@
 <?php
 
-
 namespace Mvc\Models;
+
 use Core\Model;
 use Mvc\Models\User;
 use Mvc\Models\Product;
 
+/**
+ * Class Cart
+ * @package Mvc\Models
+ *
+ * Modell Warenkorb mit Session
+ *
+ */
 class Cart extends Model
 {
-
-    public function checkCart(int $product_Id):bool
+    /**
+     * Constructor
+     */
+    private function _constructor()
     {
-        if (!$this->session->checkCart($product_Id))
-        {
+        //silence is golden
+    }
+
+    /**
+     * @param int $product_Id
+     * @return bool
+     *
+     */
+    public function checkCart(int $product_Id)
+    {
+        if (!$this->session->checkCart($product_Id)) {
             return false;
         }
         return true;
     }
 
-    public function getAllCartRecords():array
+    /**
+     * @return array
+     *
+     * Alle Produkte des Warenkorbes holen
+     *
+     */
+    public function getAllCartRecords()
     {
-        if ($this->countUniqueCarts() > 0)
-        {
+        if ($this->countUniqueCarts() > 0) {
             return $this->session->getAllCarts();
         }
         return [];
     }
 
-    public function saveCart(int $product_Id):bool
+    /**
+     * @param int $product_Id
+     * @return bool
+     *
+     * Warenkorb sichern
+     *
+     */
+    public function saveCart(int $product_Id)
     {
-        if ($this->session->saveCart($product_Id))
-        {
+        if ($this->session->saveCart($product_Id)) {
             return true;
         }
         return false;
     }
 
-    public function updateCart(int $product_Id, int $quantity):bool
+    /**
+     * @param int $product_Id
+     * @param int $quantity
+     * @return bool
+     *
+     * Warenkorb aktualisieren
+     *
+     */
+    public function updateCart(int $product_Id, int $quantity)
     {
 
-        if ($this->session->updateCart($product_Id, $quantity))
-        {
+        if ($this->session->updateCart($product_Id, $quantity)) {
             return true;
         }
         return false;
     }
 
-    public function removeCartItem(int $product_Id):bool
+    /**
+     * @param int $product_Id
+     * @return bool
+     *
+     * Produkt vom Warenkorb löschen
+     *
+     */
+    public function removeCartItem(int $product_Id)
     {
         return $this->session->removeCartItem($product_Id);
     }
 
-    public function removeAllCarts():bool
+    /**
+     * @return bool
+     *
+     * Warenkorb löschen
+     *
+     */
+    public function removeAllCarts()
     {
         return $this->session->removeAllCarts();
     }
 
-
-    public function countUniqueCarts():int
+    /**
+     * @return int
+     *
+     */
+    public function countUniqueCarts()
     {
         return $this->session->countUniqueCarts();
     }
 
-    public function countAllCarts():int
+    /**
+     * @return int
+     *
+     * Anzahl Produkte im Warenkorb
+     *
+     */
+    public function countAllCarts()
     {
         return $this->session->countAllCarts();
     }
 
-    public function countUniqueCartQty(int $product_Id):int
+    /**
+     * @param int $product_Id
+     * @return int
+     *
+     */
+    public function countUniqueCartQty(int $product_Id)
     {
         return $this->session->countUniqueCartQty($product_Id);
     }

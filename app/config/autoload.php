@@ -1,4 +1,7 @@
 <?php
+/**
+ * Klassen Loader
+ */
 spl_autoload_register(function (string $class) {
     $filePath = str_replace("\\", DIRECTORY_SEPARATOR, $class);
     if (file_exists($filePath . '.class.php')) {

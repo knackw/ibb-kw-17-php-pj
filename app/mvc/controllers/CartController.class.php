@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types=1);
+
 namespace Mvc\Controllers;
 
 use Core\Controller;
@@ -7,10 +9,23 @@ use Mvc\Models\User;
 use Mvc\Models\Cart;
 use Mvc\Models\Product;
 
+/**
+ * Class CartController
+ * @package Mvc\Controllers
+ *
+ * Der Klassename ist der Controller
+ * Funktion die Aktion (siehe Dispatcher Klasse)
+ *
+ */
 class CartController extends Controller
 {
-    private $user, $product, $cart;
+    private Cart $cart;
+    private Product $product;
+    private User $user;
 
+    /**
+     * CartController constructor
+     */
     public function __construct()
     {
         $this->user = new User();
@@ -18,11 +33,22 @@ class CartController extends Controller
         $this->cart = new Cart();
     }
 
+    /**
+     * Aktion Warenkorb anzeigen
+     */
     public function index()
     {
-
+        /**
+         * Alle Produkte laden
+         */
         $all_Cart_Records = $this->cart->getAllCartRecords();
+        /**
+         * Anzahl Produkte im Warenkorb
+         */
         $count_Carts = $this->cart->countAllCarts();
+        /**
+         * Produkte im Warenkorb
+         */
         $cart_Products = [];
 
         if ($count_Carts > 0) {
@@ -34,9 +60,11 @@ class CartController extends Controller
         $all_Product_Records = $this->product->getAllProducts();
 
         $total_Cart_Cost = $this->computeCartCost($all_Cart_Records);
-
+        /**
+         * Daten zum rendern des Templates
+         */
         $this->render("cart", [
-            'title' => 'My Shopping Cart',
+            'title' => 'Mein Warenkorb',
             'all_cart_products' => $cart_Products,
             'all_cart_quantity' => $all_Cart_Records,
             'count_carts' => $count_Carts,
@@ -45,7 +73,14 @@ class CartController extends Controller
         ]);
     }
 
-
+    /**
+     * @param int $retType
+     * @param int $product_Id
+     * @param int $quantity
+     *
+     * Aktion Warenkorb aktualisierne
+     *
+     */
     public function updateCart(int $retType, int $product_Id, int $quantity)
     {
 
@@ -65,6 +100,14 @@ class CartController extends Controller
         exit();
     }
 
+    /**
+     * @param int $retType
+     * @param int $product_Id
+     * @return array
+     *
+     * Aktion Warenkorb löschen
+     *
+     */
     public function removeCart(int $retType, int $product_Id): array
     {
 
@@ -84,6 +127,13 @@ class CartController extends Controller
         }
     }
 
+    /**
+     * @param array $cart_Records
+     * @return float
+     *
+     * Aktion Kosten im Warenkorb berechnen
+     *
+     */
     public function computeCartCost(array $cart_Records)
     {
         $total_Cost = 0;
@@ -97,6 +147,9 @@ class CartController extends Controller
         return round((float)$total_Cost, 2);
     }
 
+    /**
+     * Aktion Warenkorb Zusammenfassung
+     */
     public function summary()
     {
         $all_Cart_Records = $this->cart->getAllCartRecords();
@@ -109,6 +162,14 @@ class CartController extends Controller
         ]);
     }
 
+    /**
+     * @param int $retType
+     * @param int $product_Id
+     * @param string $pick_up_type
+     *
+     * Aktion Bezahlung
+     *
+     */
     public function checkout(int $retType, int $product_Id, string $pick_up_type)
     {
 

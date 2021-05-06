@@ -75,11 +75,11 @@ var home =
                         case "rate":
                             $("#demo_modal").modal();
                             if (response.message === "Duplicate") {
-                                $("#demo_modal .modal-body").html('You have already submitted a rating for this product');
+                                $("#demo_modal .modal-body").html('Du hast bereits eine Bewertung für diese Produkt abgegeben.');
                             } else if (response.message === "Failed") {
                                 $("#demo_modal .modal-body").html('An error occured. Please try again later');
                             } else {
-                                $("#demo_modal .modal-body").html('Thank you for rating this product ');
+                                $("#demo_modal .modal-body").html('Vielen Dank, dass Du das Produkt bewertet hast.');
                                 $(currWrap).children('number').html('(' + response.new_rating + ')');
                                 for (var i = 0; i < parseInt(response.new_rating); i++) {
                                     $(currWrap).children('.fa').eq(i).addClass("demo_rating-rated");
@@ -90,7 +90,7 @@ var home =
                         $(currElem).html('Zum Warenkorb hinzufügen').attr('disabled', false);
                             if (response.message === "Failed") {
                                 $("#demo_modal").modal();
-                                $("#demo_modal .modal-body").html('An error occured. Please refresh the page anf try again');
+                                $("#demo_modal .modal-body").html('Ein Fehler ist aufgetreten. Bitte aktualisiere die Seite und versuche es erneut!');
                             } else {
                                 $(".demo_cart-counter").html(response.new_Count);
                             }

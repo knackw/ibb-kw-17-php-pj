@@ -184,7 +184,7 @@ h6.demo_list-price {
 .demo_list-rating-info,
 .demo_list-rating-info2 {
     padding: 0px;
-    color: #c1c9c1c1;
+    color: rgba(0, 0, 0, 0.76);
     margin: 0;
     height: 100%;
     position: absolute;

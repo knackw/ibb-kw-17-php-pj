@@ -1,40 +1,49 @@
 <?php
-define('MODE', 'DEVELOPMENT');
-
-//define("APP_ROOT", dirname(__FILE__) . '/');
-
+/**
+ * Seperator
+ */
 define("APP_ROOT", dirname(__DIR__) . DIRECTORY_SEPARATOR);
-define("DEVELOPMENT_PUBLIC_FOLDER", "");
-
-define("URL_ROOT", "http://localhost/");
-define('VIEW_ROOT', APP_ROOT . DIRECTORY_SEPARATOR . 'mvc' . DIRECTORY_SEPARATOR . 'views/');
-define("SITE_NAME", "Demo Store");
-
-// DATABASE
-define("SERVER", "127.0.0.1");
-define("USERNAME", "root");
-define("PASSWORD", "");
-define("DB", "ibb-kw-17-php-pj");
-
-// SEO
-define("META_DESC", " Ein Demo Shop  ");
-define("META_KEYWORDS", "shop, einkaufen, produkte");
-
-// CURRENCIES IN USE
-define("CURRENCY", "€");
-
-// USER
-define("USER_ID_TAG", "user_id");
-define("USER_WALLET_TAG", "user_wallet");
-
-//PRODUCT
-define("PRODUCT_RATING_ARR", "product_rate_arr");
-
-//cart
-define("USER_CART_TAG", "cart_id");
-
-// check out defaults
-define("PICK_UP_COST", 0);
-define("UPS_SHIPPING_COST", 5);
-
-define("DEFAULT_WALLET_BALANCE", 100);
+/**
+ * Pfade
+ */
+const URL_ROOT = "http://localhost/";
+const VIEW_ROOT = APP_ROOT . DIRECTORY_SEPARATOR . 'mvc' . DIRECTORY_SEPARATOR . 'views/';
+const SITE_NAME = "Demo Shop";
+/**
+ * Datenbank
+ */
+const SERVER = "127.0.0.1";
+const USERNAME = "root";
+const PASSWORD = "";
+const DB = "ibb-kw-17-php-pj";
+/**
+ * SEO
+ */
+const META_DESC = " Ein Demo Shop  ";
+const META_KEYWORDS = "shop, einkaufen, produkte";
+/**
+ * Währung
+ */
+const CURRENCY = "€";
+/**
+ * Benutzer Session
+ */
+const USER_ID_TAG = "user_id";
+const USER_WALLET_TAG = "user_wallet";
+/**
+ * Produktbewertung
+ */
+const PRODUCT_RATING_ARR = "product_rate_arr";
+/**
+ * Warenkorb ID
+ */
+const USER_CART_TAG = "cart_id";
+/**
+ * Bezahlung
+ */
+const PICK_UP_COST = 0;
+const UPS_SHIPPING_COST = 5;
+/**
+ * Guthaben
+ */
+const DEFAULT_WALLET_BALANCE = 100;

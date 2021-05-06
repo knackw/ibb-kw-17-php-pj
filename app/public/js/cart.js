@@ -8,7 +8,7 @@ var cart = {
 
         if (updateQty < 1 || updateQty === "" || isNaN(updateQty)) {
             $("#demo_modal").modal();
-            $("#demo_modal .modal-body").html('Quantity must not be less than 1 and must be a number');
+        $("#demo_modal .modal-body").html('Die Menge darf nicht kleiner als eins sein und muss eine Zahl sein!');
             $("#input-" + self.productID).val(1);
             return false;
         }
@@ -23,7 +23,7 @@ var cart = {
 
         self.productID = parseInt($(currElem).attr('id').replace(/\D/g, ''));
 
-        const conf = confirm('Are you sure you wish to proceed');
+        const conf = confirm('Bist Du sicher, dass Du fortfahren möchtest?');
         if (!conf) return false;
 
         $(currElem).html('processing...').attr('disabled', true);
@@ -50,11 +50,11 @@ var cart = {
         const grossTotal = parseFloat($(".demo_checkout-gross-total").html());
         if (shippingType === "") {
             $('#demo_modal').modal();
-            $("#demo_modal .modal-body").html('Please select your preferred mode of shipping');
+            $("#demo_modal .modal-body").html('Bitte wähle Deine bevorzuge Versandart!');
             return false;
         } else if (grossTotal > walletBalance) {
             $('#demo_modal').modal();
-            $("#demo_modal .modal-body").html('You do not have enough cash left in your wallet for this transaction!!!');
+        $("#demo_modal .modal-body").html('Du hast nicht mehr genug Bargelt in der Brieftasche für diese Transaktion!!!');
             return false;
         }
         $(currElem).html('processing...').attr('disabled', true);
@@ -75,7 +75,7 @@ var cart = {
             case "":
                 $('#demo_modal').modal();
                 $(".demo_checkout-shipping-cost, .demo_checkout-gross-total").html('')
-                $("#demo_modal .modal-body").html('Please select your preferred mode of shipping');
+                $("#demo_modal .modal-body").html('Bitte wähle Deine bevorzuge versandart!');
                 break;
             case "PickUp":
                 newGross = parseFloat(productCost + 0);

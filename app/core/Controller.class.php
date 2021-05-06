@@ -1,12 +1,25 @@
 <?php
 
-namespace Core;
+declare (strict_types=1);
 
+namespace Core;
+/**
+ * Class Controller
+ * @package Core
+ */
 abstract class Controller
 {
     /**
+     * Constructor
+     */
+    private function _constructor()
+    {
+        //silence is golden
+    }
+
+    /**
      *
-     * Die Funktion fügt die Ansicht mit den Daten zusammen
+     * Die Funktion fügt die Templates mit den Daten zusammen
      *
      * @param $filename
      * @param $data
@@ -29,12 +42,12 @@ abstract class Controller
             require APP_ROOT . 'mvc/views/home.html.php';
         }
         /**
-         * Holt sich den gepufferten Content im Ausgabepuffer und löschten den Ausgabepuffer.
+         * Schreibt den gepufferten Content in eine Variable und löschten den Ausgabepuffer.
          */
         $main_Content = ob_get_clean();
 
         /**
-         * Holt sich den gepufferten Content im Ausgabepuffer und löschten den Ausgabepuffer.
+         * Ruft das Template auf und fügt den gepufferten Kontent ein
          */
         require_once APP_ROOT . 'mvc/views/templates/layout.html.php';
     }

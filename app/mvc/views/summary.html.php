@@ -9,7 +9,7 @@
                 <div class="form-group">
                     <select class="form-control demo_shipping-type">
                         <option value="">Bitte wähle eine option</option>
-                        <option value="PickUp">Pick Up (<?= PICK_UP_COST . " " . CURRENCY ?>)</option>
+                        <option value="PickUp">Ohne Versandkosten (<?= PICK_UP_COST . " " . CURRENCY ?>)</option>
                         <option value="UPS"> UPS (<?= UPS_SHIPPING_COST . " " . CURRENCY ?>)</option>
                     </select>
                 </div>

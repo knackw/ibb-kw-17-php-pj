@@ -1,16 +1,29 @@
 <?php
+
 namespace Mvc\Controllers;
+
 use Core\Controller;
 use Mvc\Models\User;
 use Mvc\Models\Cart;
 use Mvc\Models\Product;
 
+/**
+ * Class HomeController
+ * @package Mvc\Controllers
+ *
+ * Der Klassename ist der Controller
+ * Funktion die Aktion (siehe Dispatcher Klasse)
+ *
+ */
 class HomeController extends Controller
 {
-    private $user;
-    private $product;
-    private $cart;
+    private User $user;
+    private Product $product;
+    private Cart $cart;
 
+    /**
+     * CartController constructor
+     */
     public function __construct()
     {
         $this->user = new User();
@@ -18,6 +31,9 @@ class HomeController extends Controller
         $this->cart = new Cart();
     }
 
+    /**
+     * Aktion Startseite anzeigen
+     */
     public function index()
     {
 
@@ -31,14 +47,17 @@ class HomeController extends Controller
 
         $this->render("home", [
             'title' => 'Welcome to Demo Store',
-            'rows' =>  $all_Products,
+            'rows' => $all_Products,
             'prev_rated' => $prev_Rated,
             'user_wallet_balance' => $this->user->getUserWalletBalance(),
             'count_carts' => $count_Carts
         ]);
     }
 
-    public function rate(int $retType, int $product_Id,  int $rating):array
+    /**
+     * Aktion Benutzerbewertung
+     */
+    public function rate(int $retType, int $product_Id, int $rating)
     {
 
         $existing_Ratings = $this->product->getProductRating($product_Id);
@@ -48,23 +67,17 @@ class HomeController extends Controller
 
         $user_Rating_Activity = $this->user->getUserRatingActivities();
 
-        if ( $user_Rating_Activity && gettype( $user_Rating_Activity ) === "array" &&
-            array_key_exists($product_Id,  $user_Rating_Activity )  )
-        {
+        if ($user_Rating_Activity && gettype($user_Rating_Activity) === "array" &&
+            array_key_exists($product_Id, $user_Rating_Activity)) {
             $updateStatus = 'Duplicate';
-        }
-        else {
-            if (gettype($existing_Ratings) === "array" && count($existing_Ratings) > 0)
-            {
+        } else {
+            if (gettype($existing_Ratings) === "array" && count($existing_Ratings) > 0) {
                 // If successful, I should be expecting an integer
                 $new_Average_Product_Rating = $this->product->updateProductRating($product_Id, $existing_Ratings, $rating);
-                if (is_numeric($new_Average_Product_Rating))
-                {
+                if (is_numeric($new_Average_Product_Rating)) {
                     $updateStatus = 'Success';
-                    $this->user->saveUserRatingActivity( $product_Id, $rating );
-                }
-                else
-                {
+                    $this->user->saveUserRatingActivity($product_Id, $rating);
+                } else {
                     $updateStatus = 'Fail';
                 }
             }
@@ -74,7 +87,8 @@ class HomeController extends Controller
         // Render
         switch ($retType) {
             case 2:
-                echo json_encode(array( "message" => $updateStatus, 'new_rating' => $new_Average_Product_Rating )); exit();
+                echo json_encode(array("message" => $updateStatus, 'new_rating' => $new_Average_Product_Rating));
+                exit();
                 break;
             default:
                 $this->render("home", [
@@ -84,19 +98,21 @@ class HomeController extends Controller
         }
     }
 
-    public function addToCart(int $retType, int $product_Id):array
+    /**
+     * Aktion zum Warenkorb hinzufügen
+     */
+    public function addToCart(int $retType, int $product_Id)
     {
         $unique_Carts_Qty = $this->cart->countUniqueCartQty($product_Id);
 
-        if (!$this->cart->checkCart($product_Id))
-        {
+        if (!$this->cart->checkCart($product_Id)) {
             $this->cart->saveCart($product_Id);
-        }
-        else {
+        } else {
 
             $this->cart->updateCart($product_Id, $unique_Carts_Qty + 1);
         }
-        echo json_encode(array( 'message' => 'Success', 'new_Count' =>  $this->cart->countAllCarts() )); exit();
+        echo json_encode(array('message' => 'Success', 'new_Count' => $this->cart->countAllCarts()));
+        exit();
     }
 
 }

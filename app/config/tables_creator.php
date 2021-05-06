@@ -7,11 +7,30 @@ require_once "core/Model.class.php";
 require_once "core/Database.class.php";
 require_once "core/Session.class.php";
 
+/**
+ * Class TableCreator
+ *
+ * Produktgenerator
+ *
+ */
 class TableCreator extends Model
 {
 
     private STRING $output="";
+    /**
+     * Constructor
+     */
+    private function _constructor()
+    {
+        //silence is golden
+    }
 
+    /**
+     * @return string
+     *
+     * Produkte generieren
+     *
+     */
     public function createProductTable(): string
     {
         if (!$this->db->runQuery("CREATE TABLE IF NOT EXISTS products
@@ -53,7 +72,5 @@ class TableCreator extends Model
     }
 }
 
-// Create an instance of the class
 $tables_Creator = new TableCreator();
-
-echo $tables_Creator->createProductTable();
+$tables_Creator->createProductTable();

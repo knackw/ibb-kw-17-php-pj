@@ -10,8 +10,8 @@
                 ></th>
                 <th scope="col">Produkt</th>
                 <th scope="col">Anzahl</th>
-                <th scope="col">Einzelkosten (<?php echo CURRENCY; ?>)</th>
-                <th scope="col">Gesamtkosten (<?php echo CURRENCY; ?>)</th>
+                <th scope="col">Einzelkosten (<?= CURRENCY; ?>)</th>
+                <th scope="col">Gesamtkosten (<?= CURRENCY; ?>)</th>
             </tr>
             </thead>
             <?php

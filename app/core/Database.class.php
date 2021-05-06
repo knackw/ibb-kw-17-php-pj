@@ -1,25 +1,32 @@
 <?php
 
+declare (strict_types=1);
+
 namespace Core;
 
 use mysqli;
 
-class Database extends mysqli
+/**
+ * Class Database
+ * @package Core
+ *
+ * Klasse Datenbank (Todo: in DAO portieren)
+ *
+ */
+class Database
 {
 
     private mysqli $connections;
-    public $last;
-    public $insertId;
+    public mixed $last;
+    public int $insertId;
     private static ?Database $instance = null;
 
-    public function __construct()
-    {
-        $this->connections = new mysqli(SERVER, USERNAME, PASSWORD, DB);
-        if (mysqli_connect_errno()) {
-            trigger_error('Error connecting to host. ' . $this->connections->error, E_USER_ERROR);
-        }
-    }
-
+    /**
+     * @return Database|null
+     *
+     * Es wird nur eine Instance der Klasse erzeugt
+     *
+     */
     public static function getInstance(): ?Database
     {
         if (!self::$instance) {
@@ -28,10 +35,28 @@ class Database extends mysqli
         return self::$instance;
     }
 
+    /**
+     * Database constructor.
+     */
+    private function __construct()
+    {
+        $this->connections = new mysqli(SERVER, USERNAME, PASSWORD, DB);
+        if (mysqli_connect_errno()) {
+            trigger_error('Error connecting to host. ' . $this->connections->error, E_USER_ERROR);
+        }
+    }
+
+    /**
+     * @param $queryStr
+     * @return bool
+     *
+     * Abfrage ausführen
+     *
+     */
     public function runQuery($queryStr): bool
     {
         if (!$result = $this->connections->query($queryStr)) {
-            trigger_error('Error executing query: ' . $queryStr . ' -' . $this->connections->error, E_USER_ERROR);
+            trigger_error('Fehler beim Ausführen der Abfrage: ' . $queryStr . ' -' . $this->connections->error, E_USER_ERROR);
         } else {
             $this->last = $result;
             $this->insertId = $this->connections->insert_id;
@@ -39,11 +64,25 @@ class Database extends mysqli
         }
     }
 
-    public function getData()
+    /**
+     * @return mixed
+     *
+     * Daten holen
+     *
+     */
+    public function getData(): mixed
     {
         return $this->last->fetch_array(MYSQLI_ASSOC);
     }
 
+    /**
+     * @param $table
+     * @param $condition
+     * @param $limit
+     *
+     * Daten löschen
+     *
+     */
     public function deleteData($table, $condition, $limit)
     {
         $limit = ($limit == '') ? '' : ' LIMIT ' . $limit;
@@ -51,11 +90,26 @@ class Database extends mysqli
         $this->runQuery($delete);
     }
 
-    public function numRows()
+    /**
+     * @return mixed
+     *
+     * Anzahl der Datensätze
+     *
+     */
+    public function numRows(): mixed
     {
         return $this->last->num_rows;
     }
 
+    /**
+     * @param $table
+     * @param $changes
+     * @param $condition
+     * @return bool
+     *
+     * Datensatz aktualisieren
+     *
+     */
     public function updateData($table, $changes, $condition): bool
     {
         $update = "UPDATE " . $table . " SET ";
@@ -71,6 +125,14 @@ class Database extends mysqli
         return true;
     }
 
+    /**
+     * @param $table
+     * @param $data
+     * @return bool
+     *
+     * Datensatz einfügen
+     *
+     */
     public function insertData($table, $data): bool
     {
         $fields = "";
@@ -87,9 +149,16 @@ class Database extends mysqli
         return $this->runQuery($insert);
     }
 
+    /**
+     * @param $value
+     * @return string
+     *
+     * Daten säubern
+     *
+     */
     public function cleanData($value): string
     {
-        if (get_magic_quotes_gpc()) {
+        if ((function_exists("get_magic_quotes_gpc") && get_magic_quotes_gpc()) || (ini_get('magic_quotes_sybase') && (strtolower(ini_get('magic_quotes_sybase')) != "off"))) {
             $value = stripslashes($value);
         }
         if (version_compare(phpversion(), "4.3.0") == "-1") {
@@ -100,9 +169,11 @@ class Database extends mysqli
         return $value;
     }
 
+    /**
+     * Destructor
+     */
     public function __destruct()
     {
         $this->connections->close();
     }
-
 }

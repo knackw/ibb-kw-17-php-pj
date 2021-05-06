@@ -3,13 +3,13 @@
         <div class="row">
             <div class="col-md-4 col-lg-4">
                 <div class="demo_banner-image-left">
-                    <img src="<?php echo URL_ROOT ?>public/img/banner1.png" alt="Demo Store Banner">
+                    <img src="<?= URL_ROOT ?>public/img/banner1.png" alt="Demo Store Banner">
                 </div>
             </div>
             <div class="col-md-8 col-lg-8">
                 <div class="demo_banner-text-right">
                     <h2> Willkommen im Shop der unbegrenzten Möglichkeiten </h2>
-                    <p> "Bestprice"-Garantie - sicherES Einkaufen - keine Lieferkosten </p>
+                    <p> "Bestprice"-Garantie - sicheres Einkaufen - keine Lieferkosten </p>
                 </div>
             </div>
         </div>
@@ -17,50 +17,57 @@
 </section>
 <div class="container">
     <div class="demo_listing-title">
-        <h2> Produkt Liste </h2>
+<h2> UNSERE EXKLUSIVEN PRODUKTE </h2>
     </div>
     <div class="demo_listings">
         <div class="container">
             <div class="row">
                 <?php
-                foreach ($data["rows"] as $row) {
+                foreach ( $data["rows"] as $row )
+                {
                     echo '
                         <div class="col-md-3">
-                            <div class="demo_list" id="demo_list-' . $row["id"] . '"> 
+                            <div class="demo_list" id="demo_list-'.$row["id"].'"> 
                                 <div class="demo_list-container">
                                     <div class="demo_list-image">
-                                        <img src="' . URL_ROOT . 'public/img/' . $row["image"] . '">
+                                        <img src="'.URL_ROOT.'public/img/'.$row["image"].'">
                                     </div>
                                     <div class="demo_list-content"> 
-                                        <h6 class="float-left"> ' . ucfirst($row["name"]) . "  für nur  " . $row["price"] . " " . CURRENCY . ' </h6>  
+                                        <h6 class="float-left"> '.ucfirst($row["name"]). '    für nur  ' .$row["price"] . ' ' . CURRENCY .  '</h6>
+
                                         <p class="clearfix"></p>
-                                        <p> ' . $row["caption"] . ' </p> <hr/>
+                                        <p> '.$row["caption"].' </p> <hr/>
                                         <div class="demo_list-buttons">
-                                        <span demo_list-rating-info" >';
+                                        <span class="float-left demo_list-rating-info" >';
+
                     for ($i = 1; $i <= 5; $i++) {
-                        echo $i <= (int)$row["average_rating"] ? '<i class="fa fa-star demo_rating-rated" title="' . $i . '"></i>' : '<i class="fa fa-star demo_rating-unrated"  title="' . $i . '"></i>';
+                        echo $i <= (int) $row["average_rating"] ? '<i class="fa fa-star demo_rating-rated" title="'.$i.'"></i>':'<i class="fa fa-star demo_rating-unrated"  title="'.$i.'"></i>';
                     }
-                    echo ' <br/> Bewertung <number title="">(' . $row["average_rating"] . ')</number></span>
-                                        </br></br>
-                                        <span demo_list-add-cart"> 
-                                            <button class="btn btn-primary demo_cart-add-btn" id="demo_cart-add-btn-' . $row["id"] . '"> Zum Warenkorb hinzufügen </button> 
+                    echo ' <br/> Durchschnittliche Bewertung <number title="">('. $row["average_rating"].')</number></span></br></br>
+                                        <span class="float-left demo_list-add-cart"> 
+                                            <button class="btn btn-primary demo_cart-add-btn" id="demo_cart-add-btn-'.$row["id"].'"> Zum Warenkorb hinzufügen </button> 
                                         </span>
+                                            <div class="clearfix"></div>
                                         </div>
-                                        <div class="demo_list-my-ratings" id="demo_list-my-ratings-' . $row["id"] . '">';
-                    if (count($data["prev_rated"]) > 0 && array_key_exists($row["id"], $data["prev_rated"])) {
+                                        <div class="demo_list-my-ratings" id="demo_list-my-ratings-'.$row["id"].'">';
+                    if ( count($data["prev_rated"]) > 0 && array_key_exists($row["id"], $data["prev_rated"]) )
+                    {
                         echo '<span class="float-left demo_list-rating-info2" >';
-                        for ($i = 1; $i <= $data["prev_rated"][$row["id"]]; $i++) {
-                            echo $i <= (int)$row["average_rating"] ? '<i class="fa fa-star demo_rating-rated" title="' . $i . '"></i>' : '<i class="fa fa-star demo_rating-unrated"  title="' . $i . '"></i>';
+                        for ($i = 1; $i <= $data["prev_rated"][$row["id"]]; $i++)
+                        {
+                            echo $i <= (int) $row["average_rating"] ? '<i class="fa fa-star demo_rating-rated" title="'.$i.'"></i>':'<i class="fa fa-star demo_rating-unrated"  title="'.$i.'"></i>';
                         }
-                        echo ' <br/> Your Rating <number title="">(' . $data["prev_rated"][$row["id"]] . ')</number></span>
-                                            <span class="float-right demo_list-add-cart"><label> <i class="fa fa-check"> </i>Herzlichen Dank!!! </label> </span>';
-                    } else {
+                        echo ' <br/> Deine Bewertung <number title="">('. $data["prev_rated"][$row["id"]].')</number></span>
+                                            <span class="float-right demo_list-add-cart"><label> <i class="fa fa-check"> </i>Vilen Dank!!! </label> </span>';
+                    }
+                    else {
                         echo '<span class="float-left demo_list-rating-info2"> 
-                                            <br/> Deine Bewertung Rating <number title="">(' . $row["average_rating"] . ')</number></span>
-                                            <span class="float-right demo_list-add-cart "> <label> <i class="fa fa-check"> </i>Herzlichen Dank!!! </label>  </span>';
+                                            <br/> Deine Bewertung <number title="">('. $row["average_rating"].')</number></span>
+                                            <span class="float-right demo_list-add-cart "> <label> <i class="fa fa-check"> </i>Vielen Dank!!! </label>  </span>';
                     }
                     echo '  <div class="clearfix"></div>
                                         </div>
+                                         
                                     </div>
                                 </div>
                             </div>
