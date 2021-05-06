@@ -3,8 +3,6 @@
 namespace Mvc\Models;
 
 use Core\Model;
-use Mvc\Models\User;
-use Mvc\Models\Product;
 
 /**
  * Class Cart

@@ -98,7 +98,7 @@ class Session
      */
     public function removeSession($name): bool
     {
-        if ($this->sessionCheck($name)) {
+        if ($this->checkSession($name)) {
             unset($_SESSION[$name]);
             return true;
         }
