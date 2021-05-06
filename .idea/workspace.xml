@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0084c185-20da-4eba-91cf-0dc1751bf0ae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/autoload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/Dispatcher.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Dispatcher.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/HomeController.class.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/Model.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Model.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/Request.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Request.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/Router.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Router.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/Session.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Session.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/mvc/models/Product.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/mvc/models/Product.class.php" afterDir="false" />
-    </list>
+    <list default="true" id="0084c185-20da-4eba-91cf-0dc1751bf0ae" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +46,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm" value="Docker" />
     <property name="credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm" value="Docker" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../www/ibb/ibb-kw-17-php-pj" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -122,7 +111,7 @@
       <workItem from="1620238925544" duration="5006000" />
       <workItem from="1620244157840" duration="1646000" />
       <workItem from="1620246049358" duration="8873000" />
-      <workItem from="1620279080874" duration="31379000" />
+      <workItem from="1620279080874" duration="31509000" />
     </task>
     <task id="LOCAL-00001" summary="some changes">
       <created>1620166821320</created>
@@ -159,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620317182560</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="some changes">
+      <created>1620318401856</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620318401856</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
