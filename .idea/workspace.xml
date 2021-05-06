@@ -5,38 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0084c185-20da-4eba-91cf-0dc1751bf0ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/config/autoload.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/config/constants.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/config/tables_creator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/Controller.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/Database.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/HomeController.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/Model.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/Request.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/Router.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/core/Session.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/info.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/mvc/controllers/CartController.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/mvc/controllers/HomeController.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/mvc/models/Cart.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/mvc/models/Product.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/mvc/models/User.class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/mvc/views/cart.html.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/mvc/views/checkout.html.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/mvc/views/home.html.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/mvc/views/summary.html.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/mvc/views/templates/layout.html.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/public/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/public/js/cart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/public/js/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/Dispatcher.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Dispatcher.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/HomeController.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/Model.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Model.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/Request.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Request.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/Router.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Router.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/Session.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/Session.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/mvc/models/Product.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/mvc/models/Product.class.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +122,7 @@
       <workItem from="1620238925544" duration="5006000" />
       <workItem from="1620244157840" duration="1646000" />
       <workItem from="1620246049358" duration="8873000" />
-      <workItem from="1620279080874" duration="30075000" />
+      <workItem from="1620279080874" duration="31379000" />
     </task>
     <task id="LOCAL-00001" summary="some changes">
       <created>1620166821320</created>
@@ -167,7 +145,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620240060207</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="some changes">
+      <created>1620317108908</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1620317108908</updated>
+    </task>
+    <task id="LOCAL-00005" summary="some changes">
+      <created>1620317182560</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620317182560</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

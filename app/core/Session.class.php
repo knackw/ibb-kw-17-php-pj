@@ -1,9 +1,28 @@
 <?php
+
+declare (strict_types=1);
+
 namespace Core;
 
 class Session
 {
-    public function checkSession($name)
+    // Entwurfsmuster Singleton (Einzelstück) - Beginn:
+    private static ?Session $instance = null;
+
+    // Fabrik-Methode / factory-method
+    public static function getInstance(): Session {
+        if (self::$instance == null) {
+            self::$instance = new Session();
+        }
+        return self::$instance;
+    }
+    // Singleton - Ende!
+
+    private function __construct() {
+        session_start();
+    }
+
+    public function checkSession($name): bool
     {
         if (isset($_SESSION[$name]))
         {
@@ -14,7 +33,7 @@ class Session
         }
     }
 
-    public function createSession($name, $value)
+    public function createSession($name, $value): bool
     {
         if (!isset($_SESSION[$name]))
         {
@@ -24,7 +43,7 @@ class Session
         return false;
     }
 
-    public function getSession($name)
+    public function getSession($name): mixed
     {
         if (isset($_SESSION[$name]))
         {
@@ -33,7 +52,7 @@ class Session
         return false;
     }
 
-    public  function removeSession($name)
+    public  function removeSession($name): bool
     {
         if ($this->sessionCheck($name)){
             unset($_SESSION[$name]);
@@ -42,7 +61,7 @@ class Session
         return false;
     }
 
-    public function checkUserWalletBalance()
+    public function checkUserWalletBalance(): bool
     {
         if (isset($_SESSION[USER_WALLET_TAG])){
             return true;
@@ -50,25 +69,25 @@ class Session
         return false;
     }
 
-    public function getUserWalletBalance()
+    public function getUserWalletBalance(): float
     {
         return (float) $_SESSION[USER_WALLET_TAG];
 
     }
 
-    public function createUserWalletBalance()
+    public function createUserWalletBalance(): int
     {
         $_SESSION[USER_WALLET_TAG] = DEFAULT_WALLET_BALANCE;
         return DEFAULT_WALLET_BALANCE;
     }
 
-    public function updateUserWalletBalance($newBalance)
+    public function updateUserWalletBalance($newBalance): bool
     {
         $_SESSION[USER_WALLET_TAG] = $newBalance;
         return true;
     }
 
-    public  function saveUserRatings($product_Id, $user_Rating)
+    public  function saveUserRatings($product_Id, $user_Rating): bool
     {
         if ($_SESSION[PRODUCT_RATING_ARR][$product_Id] = $user_Rating)
         {
@@ -99,7 +118,7 @@ class Session
         $_SESSION[USER_CART_TAG][$product_Id] = 1;
     }
 
-    public function getCart()
+    public function getCart(): mixed
     {
         if (isset($_SESSION[USER_CART_TAG]))
         {
@@ -108,7 +127,7 @@ class Session
         return false;
     }
 
-    public function updateCart($product_Id, $quantity)
+    public function updateCart($product_Id, $quantity): bool
     {
         if ( array_key_exists($product_Id,  $_SESSION[USER_CART_TAG] ))
         {
@@ -118,7 +137,7 @@ class Session
         return false;
     }
 
-    public function checkCart($product_Id)
+    public function checkCart($product_Id): bool
     {
         if (isset($_SESSION[USER_CART_TAG][$product_Id]))
         {
@@ -127,13 +146,13 @@ class Session
         return false;
     }
 
-    public function removeAllCarts()
+    public function removeAllCarts(): bool
     {
         unset($_SESSION[USER_CART_TAG]);
         return true;
     }
 
-    public function getAllCarts()
+    public function getAllCarts(): mixed
     {
         if (isset($_SESSION[USER_CART_TAG]))
         {
@@ -142,13 +161,13 @@ class Session
         return false;
     }
 
-    public function removeCartItem($product_Id)
+    public function removeCartItem($product_Id): bool
     {
         unset($_SESSION[USER_CART_TAG][$product_Id]);
         return true;
     }
 
-    public function countUniqueCarts()
+    public function countUniqueCarts(): int
     {
         if (isset($_SESSION[USER_CART_TAG]))
         {
@@ -158,7 +177,7 @@ class Session
     }
 
 
-    public function countAllCarts()
+    public function countAllCarts(): int
     {
         if ( isset($_SESSION[USER_CART_TAG]) )
         {
@@ -172,7 +191,7 @@ class Session
         return 0;
     }
 
-    public function countUniqueCartQty($product_Id)
+    public function countUniqueCartQty($product_Id): int
     {
         if (isset($_SESSION[USER_CART_TAG][$product_Id]))
         {

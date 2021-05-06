@@ -1,5 +1,8 @@
 <?php
 
+use Core\Request;
+use Core\Router;
+
 class Dispatcher
 {
 

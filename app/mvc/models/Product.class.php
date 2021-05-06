@@ -8,7 +8,7 @@ use Mvc\Models\Cart;
 class Product extends Model
 {
     protected $rows;
-    protected $session;
+    protected \Core\Session $session;
 
     public function getAllProducts()
     {
