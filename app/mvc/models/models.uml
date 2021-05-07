@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>C:/xampp/htdocs/ibb-kw-17-php-pj/app/mvc/models</OriginalElement>
+  <nodes>
+    <node x="-424.0" y="4.5">\Mvc\Models\Product</node>
+    <node x="102.5" y="-133.0">\Core\Model</node>
+    <node x="512.0" y="-44.0">\Mvc\Models\User</node>
+    <node x="214.0" y="190.0">\Mvc\Models\Cart</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\Mvc\Models\Cart" target="\Core\Model" relationship="GENERALIZATION">
+      <point x="0.0" y="-127.0" />
+      <point x="327.5" y="126.5" />
+      <point x="162.5" y="126.5" />
+      <point x="0.0" y="50.5" />
+    </edge>
+    <edge source="\Mvc\Models\User" target="\Core\Model" relationship="GENERALIZATION">
+      <point x="0.0" y="-128.0" />
+      <point x="664.0" y="126.0" />
+      <point x="162.5" y="126.0" />
+      <point x="0.0" y="50.5" />
+    </edge>
+    <edge source="\Mvc\Models\Product" target="\Core\Model" relationship="GENERALIZATION">
+      <point x="0.0" y="-105.5" />
+      <point x="-230.0" y="126.0" />
+      <point x="162.5" y="126.0" />
+      <point x="0.0" y="50.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="127.5" y="170.0" />
+  <SelectedNodes>
+    <node>\Mvc\Models\User</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constants</Category>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

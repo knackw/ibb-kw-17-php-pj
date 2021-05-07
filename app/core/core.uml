@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>C:/xampp/htdocs/ibb-kw-17-php-pj/app/core</OriginalElement>
+  <nodes>
+    <node x="-440.0" y="-140.0">\Core\Session</node>
+    <node x="349.0" y="272.0">\Core\Router</node>
+    <node x="171.0" y="272.0">\Core\Model</node>
+    <node x="287.0" y="-121.0">\Core\Request</node>
+    <node x="-38.0" y="-131.0">\Core\Database</node>
+    <node x="586.0" y="272.0">\Core\Controller</node>
+    <node x="-38.0" y="272.0">\Dispatcher</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="127.0" y="337.5" />
+  <SelectedNodes>
+    <node>\Core\Model</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constants</Category>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
