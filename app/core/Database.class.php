@@ -10,7 +10,7 @@ use mysqli;
  * Class Database
  * @package Core
  *
- * Klasse Datenbank (Todo: in DAO portieren)
+ * Klasse Datenbank (Todo: in DAO umsetzen)
  *
  */
 class Database

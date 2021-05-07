@@ -31,9 +31,6 @@ class Dispatcher
      */
     public Router $router;
 
-
-
-
     /**
      * Mit der dispatch Funktion wird Über den Nutzer Request(Aktion) der Content der Webseite geroutet.
      */
@@ -60,7 +57,10 @@ class Dispatcher
     public function loadController(): Controller
     {
         $pageController = 'Mvc\\Controllers\\' . ucfirst($this->request->controller) . 'Controller';
-        return new $pageController();
+        if (class_exists($pageController))
+            return new $pageController();
+        else
+            exit;
     }
 
 }

@@ -1,7 +1,5 @@
 <?php
 
-declare (strict_types=1);
-
 namespace Mvc\Controllers;
 
 use Core\Controller;
@@ -108,7 +106,7 @@ class CartController extends Controller
      * Aktion Warenkorb löschen
      *
      */
-    public function removeCart(int $retType, int $product_Id): array
+    public function removeCart(int $retType, int $product_Id)
     {
 
         if ($this->cart->removeCartItem($product_Id)) {

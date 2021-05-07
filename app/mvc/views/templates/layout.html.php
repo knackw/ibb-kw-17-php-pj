@@ -7,8 +7,8 @@
     <title><?= ($data["title"] ?? ""); ?></title>
     <meta name="description" content="<?= META_DESC ?>">
     <meta name="keywords" content="<?= META_KEYWORDS ?>">
-    <link rel="stylesheet" href="<?= URL_ROOT ?>public/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= URL_ROOT ?>public/fontawsome/css/all.css">
+    <link rel="stylesheet" href="<?= URL_ROOT ?>public/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= URL_ROOT ?>public/fontawesome/css/all.css">
     <link rel="stylesheet" href="<?= URL_ROOT ?>public/css/style.css" type="text/css">
 </head>
 <body>
@@ -77,7 +77,7 @@
     <p> Entwickelt von: Demo Shop</p>
 </footer>
 <script src="<?php echo URL_ROOT ?>public/js/jquery-3.4.1.min.js"></script>
-<script src="<?php echo URL_ROOT ?>public/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo URL_ROOT ?>public/bootstrap/js/bootstrap.js"></script>
 <script src="<?php echo URL_ROOT ?>public/js/home.js"></script>
 <script src="<?php echo URL_ROOT ?>public/js/cart.js"></script>
 </body>
