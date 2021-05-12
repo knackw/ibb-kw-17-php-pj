@@ -6,7 +6,7 @@ define("APP_ROOT", dirname(__DIR__) . DIRECTORY_SEPARATOR);
 /**
  * Pfade
  */
-const URL_ROOT = "http://localhost:8080/";
+const URL_ROOT = "http://localhost/";
 const VIEW_ROOT = APP_ROOT . DIRECTORY_SEPARATOR . 'mvc' . DIRECTORY_SEPARATOR . 'views/';
 const SITE_NAME = "Demo Shop";
 /**

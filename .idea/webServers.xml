@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="e87c6e8a-bbd0-40c3-9596-91aa66e87cc9" name="Docker localhost" url="http://localhost:8080">
+      <webServer id="e87c6e8a-bbd0-40c3-9596-91aa66e87cc9" name="Docker localhost" url="http://localhost">
         <fileTransfer mountedRoot="C:\www\ibb\ibb-kw-17-php-pj\www" accessType="MOUNT" port="0" />
       </webServer>
     </option>

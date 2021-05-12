@@ -16,7 +16,8 @@ require_once "../core/Session.class.php";
 class TableCreator extends Model
 {
 
-    private STRING $output="";
+    private string $output = "";
+
     /**
      * @return string
      *
@@ -46,11 +47,17 @@ class TableCreator extends Model
             $dummyProducts = ['apfel' => '0.3', 'bier' => '2', 'wasser' => '1', 'kaese' => '3.74'];
             $this->output .= '<p> --------------------- </p>';
             foreach ($dummyProducts as $key => $product) {
+                if ($key == "apfel" || $key == "kaese") {
+                    $article = "der";
+                } else {
+                    $article = "das";
+                }
+                $key_ = ucfirst($key);
                 $data = [
                     'name' => $key,
                     'price' => $product,
                     'image' => $key . '.png',
-                    'caption' => 'This is the best ' . $key . ' in the world wide world',
+                    'caption' => 'Das ist ' . $article . ' beste ' . $key_ . ' auf der Welt',
                     'date_uploaded' => date("Y-m-d H:i:s")
                 ];
                 if (!$this->db->InsertData("products", $data)) {
