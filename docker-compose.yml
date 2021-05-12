@@ -1,33 +1,70 @@
-version: '3.9'
+version: '3'
 
 networks:
-  web-db-net:
+  ibb-kw-17-php-pj:
 
 services:
-  webserver:
-    image: thinhbuzz/php-74-apache-xdebug-29-rewrite
-    ports:
-      - "80:80"
-    volumes:
-      - ./mvc:/var/www/html
-    restart: "no"
+  # NGINX PHP 8.0
+  php:
+    image: webdevops/php-nginx-dev:8.0-alpine
+    container_name: php8
+    restart: always
+    working_dir: /www
     environment:
-      XDEBUG_CONFIG: remote_host=host.docker.internal
+      - WEB_DOCUMENT_ROOT=/www/public
+      - PHP_DISPLAY_ERRORS=1
+      - PHP_MEMORY_LIMIT=2048M
+      - PHP_MAX_EXECUTION_TIME=-1
+      - XDEBUG_MODE=debug
+      - XDEBUG_START_WITH_REQUEST=yes
+      - XDEBUG_CLIENT_PORT=9000
+      - XDEBUG_CLIENT_HOST=host.docker.internal
+      - XDEBUG_MAX_NESTING_LEVEL=1000
+    ports: ['8080:80']
     networks:
-      - web-db-net
-  database:
-    image: mysql:5.7
-    command: --default-authentication-plugin=mysql_native_password --sql-mode=""
-    restart: "no"
-    ports:
-      - 3306:3306
+      - ibb-kw-17-php-pj
     volumes:
-      - ./database:/docker-entrypoint-initdb.d
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: mysql
-      MYSQL_PASSWORD: mysql
-      MYSQL_DATABASE: ibb-kw-17-php-pj
-    networks:
-      - web-db-net
+      - ./www:/www:rw,cached
+    external_links:
+      - database:database
+      - phpmyadmin:phpmyadmin
 
+  # MariaDB - Service
+  database:
+    image: mariadb:10
+    container_name: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: app_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
+      MYSQL_ROOT_PASSWORD: root
+    ports: ['6033:3306']
+    expose: ['3306']
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./backups:/backups
+    networks:
+      - ibb-kw-17-php-pj
+
+  # PHPMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.7
+    container_name: phpmyadmin
+    restart: always
+    depends_on: ['database']
+    ports: ['8081:80']
+    external_links: ['database:database']
+    environment:
+      - PMA_HOST=database
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+      - PMA_ARBITRARY=1
+    networks:
+      - ibb-kw-17-php-pj
+    volumes:
+      - "./phpmyadmin/sessions:/sessions"
+
+volumes:
+  dbdata: {}

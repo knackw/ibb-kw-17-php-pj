@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="localhost" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" serverName="Docker localhost" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="localhost">
+      <paths name="Docker localhost">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$/app" web="/" />
+            <mapping deploy="\" local="$PROJECT_DIR$/www/public" web="/" />
           </mappings>
         </serverdata>
       </paths>
