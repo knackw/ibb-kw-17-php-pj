@@ -1,36 +1,4 @@
-#IBB PHP - Projektaufgabe
-
-Erstellen Sie ein einfaches Programmier-Projekt nach eigener Wahl (z.B. Anmelde-/Registrier-Formulare, einfaches Shop-System o.a.)
-
-### Bewertungskriterien
-
-folgende Themen sollten im Projekt verarbeitet sein
-➢ Objektorientierte Lösung
-➢ Datenbank-Zugriff
-➢ Sessions
-
-### optionale Themen
-
-➢ Sicherheit
-➢ Exception Handling
-
-Des Weiteren vergeben Sie aussagekräftige Kommentare und Bezeichner und halten sich beim Kodieren an die Konventionen zum Zeileneinzug.
-
-Um die Tabellen der Datenbank anzulegen, führe das php_Skript `tables_creator.php` im Ordner `www/config` aus.
-
-## Inhalt der Weiterbildung
-
-- Konzepte von PHP
-- Die Rolle von PHP in der Internetprogrammierung
-- Sprachelemente von PHP
-- PHP und HTML
-- Ein- und Ausgabe
-- Operatoren
-- Programmablaufsteuerung
-- Funktionen
-- Sessions
-- Arrays
-- PHP und MySQL
+#IBB PHP - Projektaufgabe - DEMO Shop
 
 ### PHP
 
