@@ -18,14 +18,6 @@ class TableCreator extends Model
 
     private STRING $output="";
     /**
-     * Constructor
-     */
-    private function _constructor()
-    {
-        //silence is golden
-    }
-
-    /**
      * @return string
      *
      * Produkte generieren
