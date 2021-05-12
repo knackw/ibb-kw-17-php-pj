@@ -2,10 +2,10 @@
 
 use Core\Model;
 
-require_once "config/constants.php";
-require_once "core/Model.class.php";
-require_once "core/Database.class.php";
-require_once "core/Session.class.php";
+require_once "constants.php";
+require_once "../core/Model.class.php";
+require_once "../core/Database.class.php";
+require_once "../core/Session.class.php";
 
 /**
  * Class TableCreator
@@ -43,7 +43,7 @@ class TableCreator extends Model
             $this->output .= '<strong>SUCCESS:</strong> <strong> Product Table </strong> was <strong> successfully </strong> created';
 
             // Insert Dummy Data
-            $dummyProducts = ['apple' => '0.3', 'beer' => '2', 'water' => '1', 'cheese' => '3.74'];
+            $dummyProducts = ['apfel' => '0.3', 'bier' => '2', 'wasser' => '1', 'kaese' => '3.74'];
             $this->output .= '<p> --------------------- </p>';
             foreach ($dummyProducts as $key => $product) {
                 $data = [
@@ -65,4 +65,4 @@ class TableCreator extends Model
 }
 
 $tables_Creator = new TableCreator();
-$tables_Creator->createProductTable();
+echo $tables_Creator->createProductTable();

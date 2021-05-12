@@ -5,7 +5,7 @@
       <paths name="Docker localhost">
         <serverdata>
           <mappings>
-            <mapping deploy="\" local="$PROJECT_DIR$/www/public" web="/" />
+            <mapping deploy="\" local="$PROJECT_DIR$/www" web="/" />
           </mappings>
         </serverdata>
       </paths>
